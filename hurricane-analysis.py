@@ -34,11 +34,11 @@ damages = ['Damages not recorded', '100M', 'Damages not recorded', '40M', '27.9M
 # deaths for each hurricane
 deaths = [90,4000,16,3103,179,184,408,682,5,1023,43,319,688,259,37,11,2068,269,318,107,65,19325,51,124,17,1836,125,87,45,133,603,138,3057,74]
 
-
-# Write a function that returns a new list of updated damages where the recorded data is 
-# converted to float values and the missing data is retained as "Damages not recorded".
+# Requirement #2
+#   Write a function that returns a new list of updated damages where the recorded data is 
+#   converted to float values and the missing data is retained as "Damages not recorded".
 # 
-# Test your function with the data stored in damages.
+#   Test your function with the data stored in damages.
 
 def convert_damages_to_float(damages_list):
     '''
@@ -61,3 +61,54 @@ updated_damages = convert_damages_to_float(damages)
 print(f"The updated damages list contains n = {len(updated_damages)} records after processing")
 print(f"This is the output from the updated_damages list, {updated_damages}")
 
+# Requirement #3
+#   Additional data collected on the 34 strongest Atlantic hurricanes are provided in a series of lists. The data includes:
+#       - names: names of the hurricanes
+#       - months: months in which the hurricanes occurred
+#       - years: years in which the hurricanes occurred
+#       - max_sustained_winds: maximum sustained winds (miles per hour) of the hurricanes
+#       - areas_affected: list of different areas affected by each of the hurricanes
+#       - deaths: total number of deaths caused by each of the hurricanes
+# 
+#   The data is organized such that the data at each index, from 0 to 33, corresponds to the same hurricane. 
+#   For example, names[0] yields the “Cuba I” hurricane, which occured in months[0] (October) years[0] (1924).
+#
+#   Write a function that constructs a dictionary made out of the lists, 
+#       - where the keys of the dictionary are the names of the hurricanes, 
+#       - and the values are dictionaries themselves containing a key for each piece of data (Name, 
+#         Month, Year, Max Sustained Wind, Areas Affected, Damage, Death) about the hurricane.
+#
+#   Thus the key "Cuba I" would have the value: 
+#       {'Name': 'Cuba I', 'Month': 'October', 'Year': 1924, 'Max Sustained Wind': 165, /
+#       'Areas Affected': ['Central America', 'Mexico', 'Cuba', 'Florida', 'The Bahamas'], /
+#       'Damage': 'Damages not recorded', 'Deaths': 90}.
+#
+#   Test your function on the lists of data provided.
+
+def hurricane_data_assembler():
+    pass
+
+full_dict = {'Hurricane_1': {'Name': 'Cuba I', 'Month': 'October', 'Year': 1924, 'Max Sustained Wind': 165, 'Areas Affected': ['Central America', 'Mexico', 'Cuba', 'Florida', 'The Bahamas'], 'Damage': 'Damages not recorded', 'Deaths': 90}}
+
+name_dict = {}
+detail_dict = {}
+for o_num in range(len(names)):
+    name_dict[o_num] = names[index]
+    for index in range(len(names)):
+
+        index = 0 
+        detail_dict['Name'] = names[index]
+        detail_dict['Name'] = months[index]
+        detail_dict['Years'] = years[index]
+        detail_dict['Max Sustained Winds'] = max_sustained_winds[index]
+        detail_dict['Areas Affected'] = areas_affected[index]
+        detail_dict['Damage'] = damages[index]
+        detail_dict['Deaths'] = deaths[index]
+
+
+my_dict = {"Name":[],"Address":[],"Age":[]};
+
+my_dict["Name"].append("Guru")
+my_dict["Address"].append("Mumbai")
+my_dict["Age"].append(30)	
+print(my_dict)
