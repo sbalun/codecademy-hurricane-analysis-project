@@ -85,30 +85,45 @@ print(f"This is the output from the updated_damages list, {updated_damages}")
 #
 #   Test your function on the lists of data provided.
 
-def hurricane_data_assembler():
+def hurricane_data_dict_with_name_keys():
+	hurricane_detail_dict = {}
+	hurricane_dict = {}
+
+	for index in range(len(names)):
+		hurricane_detail_dict['Name'] = names[index]
+		hurricane_detail_dict['Month'] = months[index]
+		hurricane_detail_dict['Year'] = years[index]
+		hurricane_detail_dict['Max Sustained Wind'] = max_sustained_winds[index]
+		hurricane_detail_dict['Areas Affected'] = areas_affected[index]
+		hurricane_detail_dict['Damage'] = updated_damages[index]
+		hurricane_detail_dict['Death'] = deaths[index]
+		hurricane_dict[names[index]] = hurricane_detail_dict.copy()	
+		
+	return hurricane_dict
+
+hurricanes = hurricane_data_dict_with_name_keys()
+
+# Print information about all hurricanes in dict
+print(hurricanes)
+
+# Print information about hurricane katrina only
+print(hurricanes['Katrina'])
+
+# Requirement #4
+#   In addition to organizing the hurricanes in a dictionary with names as the key, 
+#   you want to be able to organize the hurricanes by year.
+#
+#   Write a function that converts the current dictionary of hurricanes to a new dictionary, 
+#   where the keys are years and the values are lists containing a dictionary for each hurricane 
+#   that occurred in that year.
+#
+#   For example, the key 1932 would yield the value: 
+#       [{'Name': 'Bahamas', 'Month': 'September', 'Year': 1932, 'Max Sustained Wind': 160, 
+#       'Areas Affected': ['The Bahamas', 'Northeastern United States'], 'Damage': 'Damages not recorded', 
+#       'Deaths': 16}, 
+#       {'Name': 'Cuba II', 'Month': 'November', 'Year': 1932, 'Max Sustained Wind': 175, 
+#       'Areas Affected': ['Lesser Antilles', 'Jamaica', 'Cayman Islands', 'Cuba', 
+#       'The Bahamas', 'Bermuda'], 'Damage': 40000000.0, 'Deaths': 3103}].
+
+def get_hurricane_details_by_year():
     pass
-
-full_dict = {'Hurricane_1': {'Name': 'Cuba I', 'Month': 'October', 'Year': 1924, 'Max Sustained Wind': 165, 'Areas Affected': ['Central America', 'Mexico', 'Cuba', 'Florida', 'The Bahamas'], 'Damage': 'Damages not recorded', 'Deaths': 90}}
-
-name_dict = {}
-detail_dict = {}
-for o_num in range(len(names)):
-    name_dict[o_num] = names[index]
-    for index in range(len(names)):
-
-        index = 0 
-        detail_dict['Name'] = names[index]
-        detail_dict['Name'] = months[index]
-        detail_dict['Years'] = years[index]
-        detail_dict['Max Sustained Winds'] = max_sustained_winds[index]
-        detail_dict['Areas Affected'] = areas_affected[index]
-        detail_dict['Damage'] = damages[index]
-        detail_dict['Deaths'] = deaths[index]
-
-
-my_dict = {"Name":[],"Address":[],"Age":[]};
-
-my_dict["Name"].append("Guru")
-my_dict["Address"].append("Mumbai")
-my_dict["Age"].append(30)	
-print(my_dict)
